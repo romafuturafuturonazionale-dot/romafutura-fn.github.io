@@ -4,95 +4,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roma Futura – Comitato Fondante | Futuro Nazionale</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--nero:#07111f;--blu-scuro:#0a1628;--blu-medio:#0d2040;--bianco:#ffffff;--bianco-soft:rgba(255,255,255,0.85);--bianco-dim:rgba(255,255,255,0.5);--bianco-ghost:rgba(255,255,255,0.12);--oro:#d4a843;--oro-chiaro:#e8c84a;--rosso:#c0392b;--bordo:rgba(255,255,255,0.18)}
-body{background:var(--nero);color:var(--bianco);font-family:'Barlow',sans-serif;font-size:15px;min-height:100vh}
-.navbar{background:var(--blu-scuro);border-bottom:1px solid var(--bordo);padding:0.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
-.nav-brand{display:flex;align-items:center;gap:0.75rem}
-.nav-brand-text{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--bianco)}
-.nav-brand-sub{font-size:0.65rem;letter-spacing:2px;color:var(--bianco-dim);text-transform:uppercase;display:block}
-.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--bianco-dim);text-decoration:none;padding:0.3rem 0.6rem;border:1px solid var(--bordo);border-radius:2px;transition:all 0.15s}
-.nav-link:hover{color:var(--bianco);border-color:rgba(255,255,255,0.5)}
-.hero{background:var(--blu-scuro);padding:2.5rem 1.5rem 2rem;text-align:center;border-bottom:3px solid var(--rosso);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 49px,rgba(255,255,255,0.02) 49px,rgba(255,255,255,0.02) 50px),repeating-linear-gradient(90deg,transparent,transparent 49px,rgba(255,255,255,0.02) 49px,rgba(255,255,255,0.02) 50px)}
+:root{
+  --blu:#1B3A6B;
+  --blu-medio:#2a5298;
+  --rosso:#C0392B;
+  --oro:#B8962E;
+  --oro-chiaro:#D4A843;
+  --bg:#F4F6FA;
+  --card:#ffffff;
+  --testo:#1a1a2e;
+  --muted:#6b7280;
+  --bordo:#d1d9e6;
+  --bordo-blu:#b8c8e8;
+}
+body{background:var(--bg);color:var(--testo);font-family:'Barlow',sans-serif;font-size:15px;min-height:100vh}
+
+/* NAVBAR */
+.navbar{background:var(--blu);padding:0.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.nav-brand{display:flex;align-items:center;gap:0.9rem}
+.nav-brand-text{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:#fff}
+.nav-brand-sub{font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.75);text-decoration:none;padding:0.3rem 0.75rem;border:1px solid rgba(255,255,255,0.3);border-radius:2px;transition:all 0.15s}
+.nav-link:hover{color:#fff;border-color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.08)}
+
+/* HERO */
+.hero{background:linear-gradient(160deg, #1B3A6B 0%, #2a5298 50%, #1B3A6B 100%);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
 .hero-inner{position:relative;z-index:1}
-.loghi-row{display:flex;justify-content:center;align-items:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.logo-sep{width:1px;height:100px;background:var(--bordo)}
-.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--bianco-dim);margin-bottom:0.5rem}
-.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:3rem;letter-spacing:6px;text-transform:uppercase;color:var(--bianco);line-height:1;margin-bottom:0.25rem}
-.hero-title span{color:var(--oro-chiaro)}
-.hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;letter-spacing:3px;text-transform:uppercase;color:var(--bianco-dim);margin-bottom:1.5rem}
-.valori-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:0.4rem}
-.valore-pill{border:1px solid var(--bordo);color:var(--bianco-soft);font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;padding:0.25rem 0.8rem;background:var(--bianco-ghost)}
-.main{max-width:660px;margin:0 auto;padding:2rem 1.25rem}
-.intro-box{border-left:3px solid var(--rosso);padding:1rem 1.2rem;background:var(--bianco-ghost);margin-bottom:1.5rem;border-radius:0 3px 3px 0}
-.intro-box p{font-size:0.95rem;line-height:1.7;color:var(--bianco-soft)}
-.fn-banner{background:linear-gradient(135deg,#0d2040 0%,#1a3a6b 100%);border:1px solid rgba(232,200,74,0.35);border-radius:3px;padding:1.1rem 1.3rem;margin-bottom:1.75rem;display:flex;align-items:flex-start;gap:1rem}
-.fn-banner-icon{font-size:28px;color:var(--oro-chiaro);flex-shrink:0;margin-top:2px}
-.fn-banner-title{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--oro);margin-bottom:0.4rem;font-weight:700}
-.fn-banner-text{font-size:0.9rem;color:var(--bianco-soft);line-height:1.6}
-.fn-banner-text a{color:var(--oro-chiaro);text-decoration:none;font-weight:600}
+.loghi-row{display:flex;justify-content:center;align-items:center;gap:2.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.logo-sep{width:1px;height:110px;background:rgba(255,255,255,0.25)}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.5rem}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:3.2rem;letter-spacing:6px;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:0.3rem}
+.hero-title span{color:#E8C84A}
+.hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:0.6rem}
+.hero-codice{display:inline-block;background:rgba(232,200,74,0.15);border:1.5px solid #E8C84A;color:#E8C84A;font-family:'Barlow Condensed',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:0.3rem 1.1rem;border-radius:2px;margin-bottom:1.5rem}
+.valori-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem}
+.valore-pill{border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.9);font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;padding:0.3rem 0.9rem;background:rgba(255,255,255,0.1);border-radius:2px}
+
+/* MAIN */
+.main{max-width:680px;margin:0 auto;padding:2.5rem 1.25rem 3rem}
+
+.intro-box{border-left:4px solid var(--rosso);padding:1rem 1.25rem;background:#fff;margin-bottom:1.5rem;border-radius:0 6px 6px 0;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+.intro-box p{font-size:1rem;line-height:1.75;color:#374151}
+
+.fn-banner{background:linear-gradient(135deg,#EEF2FA 0%,#dce8f8 100%);border:1.5px solid var(--bordo-blu);border-radius:6px;padding:1.1rem 1.3rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:0.9rem}
+.fn-banner-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.fn-banner-title{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--blu);margin-bottom:0.35rem;font-weight:700}
+.fn-banner-text{font-size:0.9rem;color:#374151;line-height:1.6}
+.fn-banner-text a{color:var(--blu);font-weight:600;text-decoration:none}
 .fn-banner-text a:hover{text-decoration:underline}
-.contatto-strip{background:var(--blu-medio);border:1px solid var(--bordo);border-radius:3px;padding:0.9rem 1.2rem;margin-bottom:2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.contatto-strip .c-label{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--bianco-dim);margin-bottom:0.2rem}
-.contatto-strip .c-mail{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:600;color:var(--oro-chiaro);letter-spacing:1px;text-decoration:none}
+
+.contatto-strip{background:#fff;border:1.5px solid var(--bordo);border-radius:6px;padding:0.9rem 1.2rem;margin-bottom:2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.contatto-strip .c-icon{font-size:20px;color:var(--blu);flex-shrink:0}
+.contatto-strip .c-label{font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:0.15rem}
+.contatto-strip .c-mail{font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;font-weight:700;color:var(--blu);letter-spacing:0.5px;text-decoration:none}
 .contatto-strip .c-mail:hover{text-decoration:underline}
-.contatto-strip i{font-size:24px;color:var(--bianco-dim);flex-shrink:0}
-.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;color:var(--oro);border-bottom:1px solid var(--bordo);padding-bottom:0.5rem;margin:1.75rem 0 1rem}
+
+/* FORM */
+.form-card{background:#fff;border:1.5px solid var(--bordo);border-radius:8px;padding:1.75rem;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.82rem;letter-spacing:3px;text-transform:uppercase;color:var(--blu);border-bottom:2px solid var(--blu);padding-bottom:0.4rem;margin:1.5rem 0 1rem}
+.section-title:first-child{margin-top:0}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
 .form-grid.full{grid-template-columns:1fr}
 .form-grid.tri{grid-template-columns:1fr 1fr 1fr}
-.field label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--bianco-dim);margin-bottom:0.35rem;font-weight:600}
-.field input,.field select,.field textarea{width:100%;padding:0.6rem 0.8rem;border:1px solid var(--bordo);border-radius:2px;font-family:'Barlow',sans-serif;font-size:0.93rem;color:var(--bianco);background:var(--bianco-ghost);outline:none;transition:border-color 0.2s,background 0.2s}
-.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,0.25)}
-.field select option{background:var(--blu-scuro);color:var(--bianco)}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.08)}
-.field textarea{resize:vertical;min-height:70px}
+.field label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:0.35rem;font-weight:600}
+.field input,.field select,.field textarea{width:100%;padding:0.6rem 0.8rem;border:1.5px solid var(--bordo);border-radius:4px;font-family:'Barlow',sans-serif;font-size:0.93rem;color:var(--testo);background:#fafbfd;outline:none;transition:border-color 0.2s,background 0.2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blu-medio);background:#fff;box-shadow:0 0 0 3px rgba(42,82,152,0.1)}
+.field textarea{resize:vertical;min-height:75px}
+.field select{cursor:pointer}
+
 .fn-status-row{display:flex;gap:0.75rem;margin:0.5rem 0;flex-wrap:wrap}
-.fn-btn{flex:1;min-width:110px;padding:0.65rem 0.5rem;border:1px solid var(--bordo);border-radius:2px;background:transparent;font-family:'Barlow Condensed',sans-serif;font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--bianco-dim);cursor:pointer;text-align:center;transition:all 0.15s}
-.fn-btn:hover{border-color:rgba(255,255,255,0.45);color:var(--bianco)}
-.fn-btn.attivo{border-color:var(--oro);color:var(--oro);background:rgba(212,168,67,0.08)}
-.tessera-panel{display:none;background:rgba(212,168,67,0.06);border:1px solid rgba(212,168,67,0.3);border-radius:3px;padding:1rem 1.1rem;margin-top:0.65rem}
+.fn-btn{flex:1;min-width:120px;padding:0.65rem 0.5rem;border:1.5px solid var(--bordo);border-radius:4px;background:#fafbfd;font-family:'Barlow Condensed',sans-serif;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);cursor:pointer;text-align:center;transition:all 0.15s;font-weight:600}
+.fn-btn:hover{border-color:var(--blu);color:var(--blu);background:#EEF2FA}
+.fn-btn.attivo{border-color:var(--blu);color:var(--blu);background:#EEF2FA;font-weight:700}
+
+.tessera-panel{display:none;background:#EEF2FA;border:1.5px solid var(--bordo-blu);border-radius:4px;padding:1rem 1.1rem;margin-top:0.65rem}
 .tessera-panel.show{display:block}
-.tessera-panel label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--oro);margin-bottom:0.35rem;font-weight:600}
-.tessera-panel input{width:100%;padding:0.6rem 0.8rem;border:1px solid rgba(212,168,67,0.35);border-radius:2px;font-family:'Barlow',sans-serif;font-size:0.95rem;color:var(--bianco);background:var(--bianco-ghost);outline:none;letter-spacing:2px;transition:border-color 0.2s}
-.tessera-panel input::placeholder{color:rgba(255,255,255,0.2)}
-.tessera-panel input:focus{border-color:var(--oro)}
-.tessera-panel .hint{font-size:0.78rem;color:var(--bianco-dim);margin-top:0.4rem;font-style:italic}
-.nuovo-panel{display:none;background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.35);border-radius:3px;padding:0.85rem 1rem;margin-top:0.65rem;font-size:0.88rem;color:var(--bianco-soft);line-height:1.6}
+.tessera-panel label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--blu);margin-bottom:0.35rem;font-weight:700}
+.tessera-panel input{width:100%;padding:0.6rem 0.8rem;border:1.5px solid var(--bordo-blu);border-radius:4px;font-family:'Barlow',sans-serif;font-size:0.95rem;color:var(--testo);background:#fff;outline:none;letter-spacing:2px;transition:border-color 0.2s}
+.tessera-panel input:focus{border-color:var(--blu)}
+.tessera-panel .hint{font-size:0.78rem;color:var(--muted);margin-top:0.4rem;font-style:italic}
+
+.nuovo-panel{display:none;background:#FFF3CD;border:1.5px solid #F0C040;border-radius:4px;padding:0.85rem 1rem;margin-top:0.65rem;font-size:0.88rem;color:#7a5c00;line-height:1.6}
 .nuovo-panel.show{display:block}
-.nuovo-panel strong{color:var(--oro-chiaro)}
-.nuovo-panel a{color:var(--oro-chiaro);text-decoration:none;font-weight:600}
+.nuovo-panel a{color:var(--blu);font-weight:600;text-decoration:none}
 .nuovo-panel a:hover{text-decoration:underline}
-.checkbox-row{display:flex;align-items:flex-start;gap:0.7rem;margin:0.7rem 0}
-.checkbox-row input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:3px;accent-color:var(--oro);cursor:pointer}
-.checkbox-row label{font-size:0.88rem;line-height:1.5;color:var(--bianco-soft);cursor:pointer}
-.privacy-box{background:var(--bianco-ghost);border:1px solid var(--bordo);border-radius:3px;padding:0.9rem;margin:0.9rem 0;font-size:0.83rem;color:var(--bianco-dim);line-height:1.6}
-.btn-submit{width:100%;padding:1rem;background:var(--rosso);color:var(--bianco);border:none;border-radius:2px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:1.25rem;transition:background 0.2s,transform 0.1s}
-.btn-submit:hover{background:#a93226}
+
+.checkbox-row{display:flex;align-items:flex-start;gap:0.75rem;margin:0.75rem 0}
+.checkbox-row input[type=checkbox]{width:17px;height:17px;flex-shrink:0;margin-top:2px;accent-color:var(--blu);cursor:pointer}
+.checkbox-row label{font-size:0.9rem;line-height:1.5;color:#374151;cursor:pointer}
+
+.privacy-box{background:#f8fafc;border:1px solid var(--bordo);border-radius:4px;padding:0.9rem;margin:1rem 0;font-size:0.82rem;color:var(--muted);line-height:1.65}
+
+.btn-submit{width:100%;padding:1rem;background:var(--rosso);color:#fff;border:none;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:1.25rem;transition:background 0.2s,transform 0.1s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(192,57,43,0.3)}
+.btn-submit:hover{background:#a93226;box-shadow:0 4px 14px rgba(192,57,43,0.4)}
 .btn-submit:active{transform:scale(0.99)}
-.success-msg{display:none;background:var(--blu-medio);border:1px solid var(--bordo);border-radius:3px;padding:2rem;text-align:center;margin-top:1.5rem}
-.success-msg .s-loghi{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1rem;flex-wrap:wrap}
-.success-msg h3{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--oro-chiaro);margin-bottom:0.5rem}
-.success-msg p{font-size:0.92rem;color:var(--bianco-soft);line-height:1.7}
-.success-msg a{color:var(--oro-chiaro);text-decoration:none;font-weight:600}
-.footer-strip{background:var(--blu-scuro);border-top:1px solid var(--bordo);color:var(--bianco-dim);font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:2px;text-align:center;padding:1rem;text-transform:uppercase;margin-top:2rem}
-.footer-strip a{color:rgba(255,255,255,0.6);text-decoration:none}
-.footer-strip a:hover{color:var(--bianco)}
+.btn-submit:disabled{background:#aaa;box-shadow:none;cursor:not-allowed}
+
+.success-msg{display:none;background:#fff;border:2px solid var(--blu);border-radius:8px;padding:2.5rem;text-align:center;margin-top:1.5rem;box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+.success-msg .s-loghi{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1.25rem;flex-wrap:wrap;align-items:center}
+.success-msg h3{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blu);margin-bottom:0.6rem}
+.success-msg p{font-size:0.95rem;color:#374151;line-height:1.75}
+.success-msg a{color:var(--blu);font-weight:600;text-decoration:none}
+
+.footer-strip{background:var(--blu);color:rgba(255,255,255,0.6);font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:2px;text-align:center;padding:1.1rem;text-transform:uppercase;margin-top:0}
+.footer-strip a{color:rgba(255,255,255,0.75);text-decoration:none}
+.footer-strip a:hover{color:#fff}
 .required{color:var(--rosso);margin-left:2px}
+
 @media(max-width:600px){
   .form-grid,.form-grid.tri{grid-template-columns:1fr}
-  .hero-title{font-size:2.2rem}
+  .hero-title{font-size:2.4rem}
   .logo-sep{display:none}
   .fn-status-row{flex-direction:column}
+  .form-card{padding:1.25rem}
 }
 </style>
 </head>
 <body>
 
+<!-- LOGHI SVG INLINE -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="logo-fn" viewBox="0 0 220 220">
     <defs><radialGradient id="bg1" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#1e4a8a"/><stop offset="100%" stop-color="#0d1f3c"/></radialGradient></defs>
@@ -111,6 +145,7 @@ body{background:var(--nero);color:var(--bianco);font-family:'Barlow',sans-serif;
     <text x="110" y="188" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#E8C84A" letter-spacing="4">VANNACCI</text>
     <circle cx="110" cy="110" r="107" fill="none" stroke="#E8C84A" stroke-width="1.5" opacity="0.5"/>
   </symbol>
+  <!-- LOGO ROMA FUTURA sfondo trasparente (stesso stile SVG) -->
   <symbol id="logo-rf" viewBox="0 0 220 220">
     <defs><radialGradient id="bg2" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#1e4a8a"/><stop offset="100%" stop-color="#0d1f3c"/></radialGradient></defs>
     <circle cx="110" cy="110" r="107" fill="url(#bg2)"/>
@@ -133,10 +168,10 @@ body{background:var(--nero);color:var(--bianco);font-family:'Barlow',sans-serif;
 
 <nav class="navbar">
   <div class="nav-brand">
-    <svg width="38" height="38"><use href="#logo-fn"/></svg>
+    <svg width="40" height="40"><use href="#logo-rf"/></svg>
     <div>
-      <span class="nav-brand-text">Futuro Nazionale</span>
-      <span class="nav-brand-sub">Comitato Roma Futura</span>
+      <span class="nav-brand-text">Roma Futura</span>
+      <span class="nav-brand-sub">Comitato Fondante · Futuro Nazionale</span>
     </div>
   </div>
   <a class="nav-link" href="https://futuronazionale.it" target="_blank">Sito Ufficiale ↗</a>
@@ -145,13 +180,14 @@ body{background:var(--nero);color:var(--bianco);font-family:'Barlow',sans-serif;
 <div class="hero">
   <div class="hero-inner">
     <div class="loghi-row">
-      <svg width="95" height="95"><use href="#logo-fn"/></svg>
+      <svg width="105" height="105"><use href="#logo-fn"/></svg>
       <div class="logo-sep"></div>
-      <svg width="95" height="95"><use href="#logo-rf"/></svg>
+      <svg width="105" height="105"><use href="#logo-rf"/></svg>
     </div>
     <div class="hero-eyebrow">Futuro Nazionale — Comitato Fondante</div>
     <div class="hero-title">ROMA <span>FUTURA</span></div>
-    <div class="hero-sub">Dal 2026 • Roma</div>
+    <div class="hero-sub">Dal 2026 · Roma</div>
+    <div class="hero-codice">Comitato Roma 1011</div>
     <div class="valori-strip">
       <span class="valore-pill">Sovranità</span>
       <span class="valore-pill">Identità Italiana</span>
@@ -169,21 +205,26 @@ body{background:var(--nero);color:var(--bianco);font-family:'Barlow',sans-serif;
   </div>
 
   <div class="fn-banner">
-    <i class="ti ti-alert-circle fn-banner-icon" aria-hidden="true"></i>
+    <span class="fn-banner-icon">ℹ️</span>
     <div>
       <div class="fn-banner-title">Requisito per aderire al comitato</div>
-      <div class="fn-banner-text">Per far parte del Comitato Roma Futura è necessario essere iscritti a <strong>Futuro Nazionale</strong>. Se non sei ancora iscritto, puoi farlo su <a href="https://hub.futuronazionale.it/iscrizione" target="_blank">hub.futuronazionale.it/iscrizione</a></div>
+      <div class="fn-banner-text">Per far parte del Comitato Roma Futura è necessario essere iscritti a <strong>Futuro Nazionale</strong>. Se non sei ancora iscritto puoi farlo su <a href="https://hub.futuronazionale.it/iscrizione" target="_blank">hub.futuronazionale.it/iscrizione</a></div>
     </div>
   </div>
 
-  <div class="contatto-strip">
-    <i class="ti ti-mail" aria-hidden="true"></i>
-    <div>
-      <div class="c-label">Contatto Comitato Roma Futura</div>
+  <div class="contatto-strip" style="flex-wrap:wrap;gap:0.5rem 1.5rem;align-items:flex-start">
+    <span class="c-icon">✉️</span>
+    <div style="min-width:220px">
+      <div class="c-label">Email Comitato Roma 1011 <span style="background:#C0392B;color:#fff;font-size:0.6rem;padding:0.1rem 0.4rem;border-radius:2px;letter-spacing:1px;margin-left:4px">UFFICIALE</span></div>
+      <a class="c-mail" href="mailto:comitatoroma1011@gmail.com" style="color:#C0392B">comitatoroma1011@gmail.com</a>
+    </div>
+    <div style="min-width:220px">
+      <div class="c-label">Email Roma Futura</div>
       <a class="c-mail" href="mailto:romafutura.futuronazionale@gmail.com">romafutura.futuronazionale@gmail.com</a>
     </div>
   </div>
 
+  <div class="form-card">
   <form id="forma" onsubmit="invia(event)">
 
     <div class="section-title">Dati Anagrafici</div>
@@ -224,7 +265,7 @@ body{background:var(--nero);color:var(--bianco);font-family:'Barlow',sans-serif;
     </div>
 
     <div class="section-title">Iscrizione a Futuro Nazionale</div>
-    <p style="font-size:0.85rem;color:var(--bianco-dim);margin-bottom:0.75rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:1px">SEI GIÀ ISCRITTO AL MOVIMENTO?</p>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.75rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;text-transform:uppercase">Sei già iscritto al movimento?</p>
     <div class="fn-status-row">
       <button type="button" class="fn-btn" id="btn-si" onclick="setStatus('si')">✓ &nbsp;Sì, sono già iscritto</button>
       <button type="button" class="fn-btn" id="btn-no" onclick="setStatus('no')">+ &nbsp;No, devo iscrivermi</button>
@@ -235,7 +276,7 @@ body{background:var(--nero);color:var(--bianco);font-family:'Barlow',sans-serif;
       <div class="hint">Trovi il numero nella tua area personale su hub.futuronazionale.it</div>
     </div>
     <div class="nuovo-panel" id="panel-nuovo">
-      <strong>Attenzione:</strong> per aderire al comitato devi prima iscriverti a Futuro Nazionale su <a href="https://hub.futuronazionale.it/iscrizione" target="_blank">hub.futuronazionale.it/iscrizione</a>. Una volta iscritto, torna qui e compila il modulo. Per assistenza: <a href="mailto:romafutura.futuronazionale@gmail.com">romafutura.futuronazionale@gmail.com</a>
+      ⚠️ Per aderire al comitato devi prima iscriverti a Futuro Nazionale su <a href="https://hub.futuronazionale.it/iscrizione" target="_blank">hub.futuronazionale.it/iscrizione</a>. Una volta iscritto torna qui e compila il modulo. Per assistenza: <a href="mailto:romafutura.futuronazionale@gmail.com">romafutura.futuronazionale@gmail.com</a>
     </div>
 
     <div class="section-title">Partecipazione</div>
@@ -256,19 +297,21 @@ body{background:var(--nero);color:var(--bianco);font-family:'Barlow',sans-serif;
       <label for="ck_privacy"><strong>Acconsento</strong> al trattamento dei miei dati personali per le finalità indicate.<span class="required">*</span></label>
     </div>
 
-    <button type="submit" class="btn-submit">Aderisco al Comitato Roma Futura</button>
+    <button type="submit" class="btn-submit" id="btn-invia">Aderisco al Comitato Roma Futura</button>
   </form>
+  </div>
 
   <div class="success-msg" id="successo">
     <div class="s-loghi">
-      <svg width="70" height="70"><use href="#logo-fn"/></svg>
-      <svg width="70" height="70"><use href="#logo-rf"/></svg>
+      <svg width="80" height="80"><use href="#logo-fn"/></svg>
+      <svg width="80" height="80"><use href="#logo-rf"/></svg>
     </div>
-    <h3>Adesione Registrata</h3>
+    <h3>Adesione Registrata!</h3>
     <p>Grazie per aver aderito al Comitato Fondante <strong>ROMA FUTURA</strong>.<br>
     Sarai contattato a breve dal coordinatore.<br><br>
     Per info: <a href="mailto:romafutura.futuronazionale@gmail.com">romafutura.futuronazionale@gmail.com</a><br><br>
-    Iscrizione a Futuro Nazionale: <a href="https://hub.futuronazionale.it/iscrizione" target="_blank">hub.futuronazionale.it/iscrizione</a></p>
+    Iscrizione a Futuro Nazionale:<br>
+    <a href="https://hub.futuronazionale.it/iscrizione" target="_blank">hub.futuronazionale.it/iscrizione</a></p>
   </div>
 
 </div>
@@ -290,7 +333,7 @@ function setStatus(v){
 async function invia(e){
   e.preventDefault();
   if(!document.getElementById('ck_privacy').checked){alert('Devi accettare l\'informativa privacy per procedere.');return}
-  const btn = document.querySelector('.btn-submit');
+  const btn = document.getElementById('btn-invia');
   btn.textContent = 'Invio in corso...';
   btn.disabled = true;
   const data = {
@@ -307,23 +350,23 @@ async function invia(e){
   };
   try {
     const res = await fetch('https://formspree.io/f/xbdwwwjk', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(data)
     });
     if(res.ok){
-      document.getElementById('forma').style.display='none';
+      document.getElementById('forma').closest('.form-card').style.display='none';
       document.getElementById('successo').style.display='block';
       document.getElementById('successo').scrollIntoView({behavior:'smooth'});
     } else {
       alert('Errore nell\'invio. Riprova o scrivi a romafutura.futuronazionale@gmail.com');
-      btn.textContent = 'Aderisco al Comitato Roma Futura';
-      btn.disabled = false;
+      btn.textContent='Aderisco al Comitato Roma Futura';
+      btn.disabled=false;
     }
   } catch(err){
     alert('Errore di connessione. Riprova o scrivi a romafutura.futuronazionale@gmail.com');
-    btn.textContent = 'Aderisco al Comitato Roma Futura';
-    btn.disabled = false;
+    btn.textContent='Aderisco al Comitato Roma Futura';
+    btn.disabled=false;
   }
 }
 document.getElementById('cf').addEventListener('input',function(){this.value=this.value.toUpperCase()});
